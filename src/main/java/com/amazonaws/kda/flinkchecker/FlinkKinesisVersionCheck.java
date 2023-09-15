@@ -6,12 +6,10 @@ import java.util.Optional;
 
 /**
  * Ensures that the version of the Kinesis connector `flink-connector-kinesis` includes critical fixes
- * required for production readiness.<br/>
- * <br/>
+ * required for production readiness.
  * For Flink 1.15: flink-connector-kinesis `1.15.4` is recommended. A warning is issued if this is not the case.
  * flink-connector-kinesis `1.15.4` includes a fix for a critical bug where Flink Kinesis EFO Consumer can fail to stop
- * gracefully (FLINK-31183)<br/>
- * <br/>
+ * gracefully (FLINK-31183)
  * See {@link FlinkVersionDependencies} for the recommended Kinesis connectors matrix for all Flink versions
  */
 public class FlinkKinesisVersionCheck extends Check {
