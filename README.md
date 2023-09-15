@@ -1,4 +1,4 @@
-### Why this project exists
+## Why this project exists
 
 The goal of this project is to catch certain issues with Apache Flink applications fast (during build/packaging).
 
