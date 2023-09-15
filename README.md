@@ -17,30 +17,24 @@ Maven plugin to find issues with Apache Flink applications at build time.
 
 ### Example usage:
 
+Run the following Maven command in your Maven (Apache Flink) project dir:
+
 ```
-# Check out this project and install it locally
-cd ${PATH_TO_THIS_STATIC_CHECKER_PROJECT}
-mvn clean install
-
-
-# Go to your Apache Flink (Maven) project and run it
-cd ${PATH_TO_FLINK_PROJECT}
-mvn software.amazon.kinesis:static-checker-flink:0.0.1-SNAPSHOT:check
+mvn software.amazon.kinesis:static-checker-flink:0.0.1:check
 ```
 
 Checker results should also appear in `target/` folder in jUnit format, so you can integrate it with a CI tool.
 
-### How to include in project
+### How to include it in project pom.xml so it runs on every build
 
 Include plugin in `pom.xml`
 ```
-...
 <build>
     <plugins>
         <plugin>
             <groupId>software.amazon.kinesis</groupId>
             <artifactId>static-checker-flink</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.0.1</version>
             <executions>
                 <execution>
                     <goals>
@@ -58,11 +52,47 @@ Verify project
 mvn clean verify
 ```
 
-### Generate javadocs:
+You should get a warning about issues in your project:
+
+![](./screenshots/static-checker-strict-mode.png)
+
+If you want to fail the build because of the detected issues, enable strict mode:
 
 ```
-mvn javadoc:javadoc
+<build>
+    <plugins>
+        <plugin>
+            <groupId>software.amazon.kinesis</groupId>
+            <artifactId>static-checker-flink</artifactId>
+            <version>0.0.1</version>
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>check</goal>
+                    </goals>
+		    <configuration>
+			<mode>STRICT</mode>
+		    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+</build>
 ```
+
+The output should looks as follows:
+
+![](./screenshots/static-checker-strict-mode.png)
+
+## Contributing
+
+Contributing is very easy and is more than welcome!
+
+1) Fork the project
+2) Write your code in a branch in your fork
+3) Push your branch upstream, GitHub will show you a button to create a Pull Request (PR)
+
+Contributing is not limited to writing code, you can also contribute by creating issues or giving us feedback for instance. 
 
 ## Security
 
