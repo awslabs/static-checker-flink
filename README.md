@@ -84,6 +84,12 @@ The output should looks as follows:
 
 ![](./screenshots/static-checker-strict-mode.png)
 
+### Note on keeping the plugin up to date
+
+Please use the most up to date version of the plugin as more known issues are contributed by the community.
+
+There are tools such as Dependabot to automate this.
+
 ## Contributing
 
 Contributing is very easy and is more than welcome!
