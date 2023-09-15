@@ -54,7 +54,7 @@ mvn clean verify
 
 You should get a warning about issues in your project:
 
-![](./screenshots/static-checker-strict-mode.png)
+![](./screenshots/static-checker-lenient-mode.png)
 
 If you want to fail the build because of the detected issues, enable strict mode:
 
