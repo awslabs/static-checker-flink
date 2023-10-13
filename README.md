@@ -80,7 +80,7 @@ If you want to fail the build because of the detected issues, enable strict mode
 </build>
 ```
 
-The output should looks as follows:
+The output should look as follows:
 
 ![](./screenshots/static-checker-strict-mode.png)
 
