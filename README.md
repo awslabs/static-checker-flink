@@ -4,9 +4,9 @@ The goal of this project is to catch certain issues with Apache Flink applicatio
 
 Covered cases:
 
-- Kinesis connector compatibility issues
-- Kafka connector compatibility issues
-- MSK IAM Auth library issues
+- Kinesis connector compatibility issues & known bugs
+- Kafka connector compatibility issues & known bugs
+- MSK IAM Auth library issues & known bugs
 
 For instance did you know that you have to use AWS Kinesis Connector 1.15.4 or above for Flink 1.15 apps? This plugin
 is there to stop you from building an app that has such incompatible connector versions.
